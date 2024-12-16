@@ -1,0 +1,143 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+static/
+
+# Virtual Environments
+venv/
+env/
+.env
+.venv
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker
+postgres-data/
+redis-data/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+logs/
+*.log.*
+
+# Secrets and Sensitive Data
+*.key
+*.pem
+secrets.yml
+
+# Frontend (if applicable)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Backup files
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Package management
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.hypothesis/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django migrations (optional, depends on your workflow)
+# Uncomment the next line if you want to ignore migrations
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Environments and Configuration
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Monitoring and Profiling
+*.prof
+*.lprof
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

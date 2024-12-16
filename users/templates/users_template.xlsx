@@ -1,0 +1,3 @@
+username,email,first_name,last_name,phone,default_address,typology,password
+usuario1,usuario1@example.com,Nombre1,Apellido1,123456789,Dirección 1,CUSTOMER,contraseña1
+usuario2,usuario2@example.com,Nombre2,Apellido2,987654321,Dirección 2,RESTAURANT,contraseña2

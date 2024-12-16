@@ -1,0 +1,52 @@
+version: '3.3'
+
+services:
+  restaurantes-app:
+    container_name: restaurantes-app
+    build: .
+    image: restaurantes-app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/app  # Solo en desarrollo
+    ports:
+      - "8000:8000"
+    env_file: .env
+    depends_on:
+      - restaurantes-db
+      - restaurantes-redis
+
+  restaurantes-db:
+    container_name: restaurantes-db
+    image: postgres:16-alpine
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=restaurantes
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    
+
+  restaurantes-redis:
+    container_name: restaurantes-redis
+    image: redis:7
+    env_file: .env
+    ports:
+      - "6379:6379"
+
+  restaurantes-celery:
+    container_name: restaurantes-celery
+    build: .
+    command: celery -A gestion_pedidos worker -l INFO
+    env_file: .env
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=1
+      - DJANGO_SETTINGS_MODULE=gestion_pedidos.settings
+      - DATABASE_URL=postgresql://postgres:postgres@restaurantes-db:5432/restaurantes
+      - CELERY_BROKER_URL=redis://restaurantes-redis:6379/0
+    depends_on:
+      - restaurantes-app
+      - restaurantes-redis

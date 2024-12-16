@@ -1,0 +1,11 @@
+name,address,phone,category,opening_time,closing_time,rating,status
+La Parrilla Gourmet,Calle 123 #45-67,+57 301 234 5678,Carnes,08:00,22:00,4.5,OPEN
+Sushi Master,Av Principal 89-12,+57 302 345 6789,Japonesa,11:00,23:00,4.8,OPEN
+Pizza Express,Carrera 34 #56-78,+57 303 456 7890,Italiana,12:00,23:00,4.2,OPEN
+El Fogón Criollo,Calle 90 #12-34,+57 304 567 8901,Criolla,07:00,21:00,4.6,OPEN
+Sabor Marino,Av del Mar #45-67,+57 305 678 9012,Mariscos,11:30,22:30,4.7,OPEN
+Burger House,Plaza Central #78-90,+57 306 789 0123,Hamburguesas,11:00,23:00,4.3,OPEN
+Veggie Fresh,Carrera 67 #89-12,+57 307 890 1234,Vegetariana,08:00,20:00,4.4,OPEN
+Tacos y Más,Calle 45 #23-45,+57 308 901 2345,Mexicana,11:00,23:00,4.5,OPEN
+Pasta Bella,Av Italia #56-78,+57 309 012 3456,Italiana,12:00,22:00,4.6,OPEN
+El Wok,Centro Comercial #90-12,+57 310 123 4567,Asiática,11:00,22:00,4.3,OPEN

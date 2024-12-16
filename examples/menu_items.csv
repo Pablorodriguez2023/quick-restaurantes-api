@@ -1,0 +1,21 @@
+name,description,price,category,restaurant_id,is_available
+Parrillada Mixta,Selección de carnes a la parrilla con guarnición,45000,Carnes,1,true
+Sushi Especial,Roll de salmón tempura con aguacate,35000,Sushi,2,true
+Pizza Margherita,Pizza tradicional con tomate y albahaca,28000,Pizza,3,true
+Bandeja Paisa,Plato típico colombiano con frijoles y chicharrón,32000,Típica,4,true
+Cazuela de Mariscos,Mariscos en salsa cremosa con arroz,48000,Mariscos,5,true
+Hamburguesa Clásica,Carne angus con queso cheddar y tocino,25000,Hamburguesas,6,true
+Ensalada Buddha Bowl,Bowl de quinoa con vegetales y aguacate,22000,Vegetariano,7,true
+Tacos al Pastor,Tres tacos de cerdo marinado con piña,18000,Mexicano,8,true
+Spaghetti Carbonara,Pasta con salsa cremosa y panceta,26000,Pasta,9,true
+Chow Mein,Fideos salteados con vegetales y pollo,24000,Asiático,10,true
+Costillas BBQ,Costillas de cerdo en salsa barbacoa,42000,Carnes,1,true
+Nigiri Mixto,Selección de nigiri de pescado fresco,38000,Sushi,2,true
+Pizza Pepperoni,Pizza con pepperoni y queso mozzarella,30000,Pizza,3,true
+Ajiaco,Sopa tradicional colombiana con pollo,28000,Típica,4,true
+Ceviche Mixto,Ceviche de pescado y mariscos,35000,Mariscos,5,true
+Hamburguesa Vegana,Hamburguesa de lentejas con aguacate,23000,Hamburguesas,6,true
+Wrap de Falafel,Wrap integral con falafel y hummus,20000,Vegetariano,7,true
+Quesadillas,Quesadillas de pollo con guacamole,16000,Mexicano,8,true
+Lasagna,Lasagna de carne con salsa bechamel,28000,Pasta,9,true
+Pollo Kung Pao,Pollo picante con maní y vegetales,26000,Asiático,10,true
