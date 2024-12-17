@@ -73,7 +73,7 @@ JWT_SECRET_KEY=your_jwt_secret_key_here
 ### 3. Construir y Levantar Contenedores
 ```bash
 # Construir contenedores
-docker-compose up --build
+docker-compose up -d --build
  
 ```
  
@@ -143,7 +143,7 @@ curl -X POST http://localhost:8000/api/token/ \
 
 ---
 ##  🚀 PRUEBAS CON POSTMAN
-> si desea realizar el proceso de pruebas con postman, puede importar la coleccion que se encuentra en la raiz del proyecto, llamada `postman_collection.json.`
+> si desea realizar el proceso de pruebas con postman, puede importar la coleccion que se encuentra en la raiz del proyecto, llamada `coleccion-postman.json.`
 
 
 ## 📡 API Endpoints
