@@ -1,249 +1,719 @@
 {
-  "endpoints": [
-      {
-          "name": "Autenticación y Tokens",
-          "methods": [
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/token/",
-                  "description": "Obtiene un par de tokens de acceso y refresco"
-              }
-          ]
-      },
-      {
-          "name": "Documentación API",
-          "methods": [
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/swagger/",
-                  "description": "Interfaz interactiva de Swagger para probar la API"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/redoc/",
-                  "description": "Documentación alternativa con ReDoc"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/swagger.json",
-                  "description": "Especificación OpenAPI en formato JSON"
-              }
-          ]
-      },
-      {
-          "name": "Gestión de Usuarios",
-          "methods": [
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/users/users/",
-                  "description": "Lista todos los usuarios registrados"
-              },
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/users/",
-                  "description": "Crea un nuevo usuario"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/users/{id}/",
-                  "description": "Obtiene detalles de un usuario específico"
-              },
-              {
-                  "method": "PUT",
-                  "url": "http://localhost:8000/api/users/{id}/",
-                  "description": "Actualiza datos de un usuario existente"
-              },
-              {
-                  "method": "DELETE",
-                  "url": "http://localhost:8000/api/users/{id}/",
-                  "description": "Elimina un usuario del sistema"
-              },
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/users/register/",
-                  "description": "Registro específico para nuevos usuarios"
-              }
-          ]
-      },
-      {
-          "name": "Gestión de Restaurantes",
-          "methods": [
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/",
-                  "description": "Lista todos los restaurantes"
-              },
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/",
-                  "description": "Registra un nuevo restaurante"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/{id}/",
-                  "description": "Obtiene detalles de un restaurante específico"
-              },
-              {
-                  "method": "PUT",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/{id}/",
-                  "description": "Actualiza información de un restaurante"
-              },
-              {
-                  "method": "DELETE",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/{id}/",
-                  "description": "Elimina un restaurante del sistema"
-              },
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/bulk_upload/",
-                  "description": "Carga masiva de restaurantes mediante archivo CSV"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/check_task_status/{task_id}/",
-                  "description": "Verifica estado de una tarea de carga masiva"
-              }
-          ]
-      },
-      {
-          "name": "Gestión de Archivos CSV y Reportes",
-          "methods": [
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/menu/menu-items/bulk_upload/",
-                  "description": "Carga masiva de items de menú mediante archivo CSV"
-              },
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/users/users/bulk_upload/",
-                  "description": "Carga masiva de usuarios mediante archivo CSV"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/download_template/",
-                  "description": "Descarga plantilla CSV para carga masiva de restaurantes"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/menu/menu-items/download_template/",
-                  "description": "Descarga plantilla CSV para carga masiva de items de menú"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/users/users/download_template/",
-                  "description": "Descarga plantilla CSV para carga masiva de usuarios"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/generate_report/",
-                  "description": "Genera reporte de restaurantes en formato CSV"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/download_report/{task_id}/",
-                  "description": "Descarga el reporte generado en formato CSV"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/generate_sales_report/",
-                  "description": "Genera reporte de ventas en formato CSV"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/restaurants/restaurants/check_task_status/{task_id}/",
-                  "description": "Verifica el estado de una tarea de generación de reporte o carga masiva"
-              }
-          ]
-      },
-      {
-          "name": "Gestión del Menú",
-          "methods": [
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/menu/menu-items/",
-                  "description": "Lista todos los items del menú"
-              },
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/menu/menu-items/",
-                  "description": "Crea un nuevo item en el menú"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/menu/menu-items/{id}/",
-                  "description": "Obtiene detalles de un item específico"
-              },
-              {
-                  "method": "PUT",
-                  "url": "http://localhost:8000/api/menu/menu-items/{id}/",
-                  "description": "Actualiza información de un item"
-              },
-              {
-                  "method": "DELETE",
-                  "url": "http://localhost:8000/api/menu/menu-items/{id}/",
-                  "description": "Elimina un item del menú"
-              }
-          ]
-      },
-      {
-          "name": "Gestión de Órdenes",
-          "methods": [
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/orders/orders/",
-                  "description": "Lista todas las órdenes"
-              },
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/orders/orders/",
-                  "description": "Crea una nueva orden"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/orders/orders/{id}/",
-                  "description": "Obtiene detalles de una orden específica"
-              },
-              {
-                  "method": "PUT",
-                  "url": "http://localhost:8000/api/orders/orders/{id}/",
-                  "description": "Actualiza estado o información de una orden"
-              },
-              {
-                  "method": "DELETE",
-                  "url": "http://localhost:8000/api/orders/orders/{id}/",
-                  "description": "Elimina una orden del sistema"
-              }
-          ]
-      },
-      {
-          "name": "Gestión de Ítems de Orden",
-          "methods": [
-              {
-                  "method": "POST",
-                  "url": "http://localhost:8000/api/orders/order-items/",
-                  "description": "Agrega un nuevo ítem a una orden"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/orders/order-items/",
-                  "description": "Lista todos los ítems de las órdenes"
-              },
-              {
-                  "method": "GET",
-                  "url": "http://localhost:8000/api/orders/order-items/{id}/",
-                  "description": "Obtiene los detalles de un ítem específico de la orden"
-              },
-              {
-                  "method": "PUT",
-                  "url": "http://localhost:8000/api/orders/order-items/{id}/",
-                  "description": "Actualiza un ítem existente en la orden"
-              },
-              {
-                  "method": "DELETE",
-                  "url": "http://localhost:8000/api/orders/order-items/{id}/",
-                  "description": "Elimina un ítem de la orden"
-              }
-          ]
-      }
-  ]
+	"info": {
+		"_postman_id": "b3281ce5-a71f-484c-9c60-2d2d22394340",
+		"name": "API Endpoints - Restaurantes",
+		"description": "Colección para interactuar con la API de restaurantes, usuarios, menús, órdenes, order items y reportes.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32379925"
+	},
+	"item": [
+		{
+			"name": "Autenticación y Tokens",
+			"item": [
+				{
+					"name": "Obtener Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"pablo\", \"password\": \"pablo1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestión de Usuarios",
+			"item": [
+				{
+					"name": "Registrar Usuarios",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{acces_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"nuevo1@email.com\",\n  \"password\": \"contraseña123\",\n  \"first_name\": \"Nombre\",\n  \"last_name\": \"Apellido\",\n  \"phone\": \"1234567890\",\n  \"default_address\": \"Dirección 123\",\n  \"username\": \"andrea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/users/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/users/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"users",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestión de Restaurantes",
+			"item": [
+				{
+					"name": "Crear Restaurante",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Restaurante corrientazo\", \"address\": \"Dirección del Restaurante\", \"phone\": \"1234567890\", \"email\": \"restauran2te@email.com\", \"description\": \"Descripción del restaurante\", \"category\": \"ITALIAN\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/restaurants/restaurants/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"restaurants",
+								"restaurants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Restaurantes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/restaurants/restaurants/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"restaurants",
+								"restaurants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Restaurante",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/restaurants/restaurants/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"restaurants",
+								"restaurants",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestión de Menú",
+			"item": [
+				{
+					"name": "Crear Ítem de Menú",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Plato Ejemplo2\", \"description\": \"Descripción del plato\", \"price\": 15.99, \"restaurant\": 1, \"category\": \"MAIN_COURSE\", \"available\": true, \"preparation_time\": 20}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/menu/menu-items/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"menu",
+								"menu-items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Ítems de Menú",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/menu/menu-items/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"menu",
+								"menu-items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Item Menu",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{acces_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/menu/menu-items/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"menu",
+								"menu-items",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestión de Órdenes",
+			"item": [
+				{
+					"name": "Crear Orden",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"restaurant\": 1,\n  \"delivery_address\": \"Dirección de entrega\",\n  \"items\": [\n    {\n      \"menu_item\": 1,\n      \"quantity\": 2\n    }\n  ],\n  \"special_instructions\": \"Sin instrucciones especiales\",     // Campo requerido\n  \"estimated_delivery_time\": \"2024-12-17T22:00:00Z\"          // Campo requerido: fecha y hora en formato ISO\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/orders/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Orden",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/orders/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Orden",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/orders/orders/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"orders",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestión de OrderItems",
+			"item": [
+				{
+					"name": "Crear OrderItem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"order\": 1, \"menu_item\": 1, \"quantity\": 3}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/orders/order-items/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"order-items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar OrderItems de una Orden",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/orders/order-items/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"order-items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar OrderItem",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/orders/order-items/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"order-items",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Archivos CSV",
+			"item": [
+				{
+					"name": "Descargar Usuarios CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"order\": 1, \"menu_item\": 1, \"quantity\": 3}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000//api/users/users/download_template/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"",
+								"api",
+								"users",
+								"users",
+								"download_template",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descargar Restaurantes CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"order\": 1, \"menu_item\": 1, \"quantity\": 3}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/restaurants/restaurants/download_template/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"restaurants",
+								"restaurants",
+								"download_template",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
 }

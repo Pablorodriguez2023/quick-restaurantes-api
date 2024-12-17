@@ -143,7 +143,7 @@ curl -X POST http://localhost:8000/api/token/ \
 
 ---
 ##  🚀 PRUEBAS CON POSTMAN
-> si desea realizar el proceso de pruebas con postman, puede importar la coleccion que se encuentra en la raiz del proyecto, llamada `coleccion-postman.json.`
+> si desea realizar el proceso de pruebas con postman, puede importar la coleccion que se encuentra en la raiz del proyecto, llamada `postman-collection.json.`
 
 
 ## 📡 API Endpoints
