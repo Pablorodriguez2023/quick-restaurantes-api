@@ -1,0 +1,249 @@
+{
+  "endpoints": [
+      {
+          "name": "Autenticación y Tokens",
+          "methods": [
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/token/",
+                  "description": "Obtiene un par de tokens de acceso y refresco"
+              }
+          ]
+      },
+      {
+          "name": "Documentación API",
+          "methods": [
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/swagger/",
+                  "description": "Interfaz interactiva de Swagger para probar la API"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/redoc/",
+                  "description": "Documentación alternativa con ReDoc"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/swagger.json",
+                  "description": "Especificación OpenAPI en formato JSON"
+              }
+          ]
+      },
+      {
+          "name": "Gestión de Usuarios",
+          "methods": [
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/users/users/",
+                  "description": "Lista todos los usuarios registrados"
+              },
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/users/",
+                  "description": "Crea un nuevo usuario"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/users/{id}/",
+                  "description": "Obtiene detalles de un usuario específico"
+              },
+              {
+                  "method": "PUT",
+                  "url": "http://localhost:8000/api/users/{id}/",
+                  "description": "Actualiza datos de un usuario existente"
+              },
+              {
+                  "method": "DELETE",
+                  "url": "http://localhost:8000/api/users/{id}/",
+                  "description": "Elimina un usuario del sistema"
+              },
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/users/register/",
+                  "description": "Registro específico para nuevos usuarios"
+              }
+          ]
+      },
+      {
+          "name": "Gestión de Restaurantes",
+          "methods": [
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/",
+                  "description": "Lista todos los restaurantes"
+              },
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/",
+                  "description": "Registra un nuevo restaurante"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/{id}/",
+                  "description": "Obtiene detalles de un restaurante específico"
+              },
+              {
+                  "method": "PUT",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/{id}/",
+                  "description": "Actualiza información de un restaurante"
+              },
+              {
+                  "method": "DELETE",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/{id}/",
+                  "description": "Elimina un restaurante del sistema"
+              },
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/bulk_upload/",
+                  "description": "Carga masiva de restaurantes mediante archivo CSV"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/check_task_status/{task_id}/",
+                  "description": "Verifica estado de una tarea de carga masiva"
+              }
+          ]
+      },
+      {
+          "name": "Gestión de Archivos CSV y Reportes",
+          "methods": [
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/menu/menu-items/bulk_upload/",
+                  "description": "Carga masiva de items de menú mediante archivo CSV"
+              },
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/users/users/bulk_upload/",
+                  "description": "Carga masiva de usuarios mediante archivo CSV"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/download_template/",
+                  "description": "Descarga plantilla CSV para carga masiva de restaurantes"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/menu/menu-items/download_template/",
+                  "description": "Descarga plantilla CSV para carga masiva de items de menú"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/users/users/download_template/",
+                  "description": "Descarga plantilla CSV para carga masiva de usuarios"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/generate_report/",
+                  "description": "Genera reporte de restaurantes en formato CSV"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/download_report/{task_id}/",
+                  "description": "Descarga el reporte generado en formato CSV"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/generate_sales_report/",
+                  "description": "Genera reporte de ventas en formato CSV"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/restaurants/restaurants/check_task_status/{task_id}/",
+                  "description": "Verifica el estado de una tarea de generación de reporte o carga masiva"
+              }
+          ]
+      },
+      {
+          "name": "Gestión del Menú",
+          "methods": [
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/menu/menu-items/",
+                  "description": "Lista todos los items del menú"
+              },
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/menu/menu-items/",
+                  "description": "Crea un nuevo item en el menú"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/menu/menu-items/{id}/",
+                  "description": "Obtiene detalles de un item específico"
+              },
+              {
+                  "method": "PUT",
+                  "url": "http://localhost:8000/api/menu/menu-items/{id}/",
+                  "description": "Actualiza información de un item"
+              },
+              {
+                  "method": "DELETE",
+                  "url": "http://localhost:8000/api/menu/menu-items/{id}/",
+                  "description": "Elimina un item del menú"
+              }
+          ]
+      },
+      {
+          "name": "Gestión de Órdenes",
+          "methods": [
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/orders/orders/",
+                  "description": "Lista todas las órdenes"
+              },
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/orders/orders/",
+                  "description": "Crea una nueva orden"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/orders/orders/{id}/",
+                  "description": "Obtiene detalles de una orden específica"
+              },
+              {
+                  "method": "PUT",
+                  "url": "http://localhost:8000/api/orders/orders/{id}/",
+                  "description": "Actualiza estado o información de una orden"
+              },
+              {
+                  "method": "DELETE",
+                  "url": "http://localhost:8000/api/orders/orders/{id}/",
+                  "description": "Elimina una orden del sistema"
+              }
+          ]
+      },
+      {
+          "name": "Gestión de Ítems de Orden",
+          "methods": [
+              {
+                  "method": "POST",
+                  "url": "http://localhost:8000/api/orders/order-items/",
+                  "description": "Agrega un nuevo ítem a una orden"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/orders/order-items/",
+                  "description": "Lista todos los ítems de las órdenes"
+              },
+              {
+                  "method": "GET",
+                  "url": "http://localhost:8000/api/orders/order-items/{id}/",
+                  "description": "Obtiene los detalles de un ítem específico de la orden"
+              },
+              {
+                  "method": "PUT",
+                  "url": "http://localhost:8000/api/orders/order-items/{id}/",
+                  "description": "Actualiza un ítem existente en la orden"
+              },
+              {
+                  "method": "DELETE",
+                  "url": "http://localhost:8000/api/orders/order-items/{id}/",
+                  "description": "Elimina un ítem de la orden"
+              }
+          ]
+      }
+  ]
+}

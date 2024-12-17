@@ -50,19 +50,18 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     """
-    Modelo para los elementos de un pedido
+    Modelo para los elementos de un pedido.
     """
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
     
     # Referencia al modelo Order en la app orders
-    order = models.ForeignKey('orders.Order', on_delete=models.CASCADE, related_name='items')  # Corregido aquí
-    menu_item = models.ForeignKey('menu.MenuItem', on_delete=models.CASCADE)  # Corregido aquí
+    order = models.ForeignKey('orders.Order', on_delete=models.CASCADE, related_name='items')
+    menu_item = models.ForeignKey('menu.MenuItem', on_delete=models.CASCADE)
     
     quantity = models.PositiveIntegerField()
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
     notes = models.TextField(blank=True)
 
     def save(self, *args, **kwargs):
@@ -71,13 +70,13 @@ class OrderItem(models.Model):
         """
         if not self.unit_price:
             self.unit_price = self.menu_item.price
-        self.subtotal = self.quantity * self.unit_price
         super().save(*args, **kwargs)
         self.order.update_total_amount()
 
-    def __str__(self):
-        return f"{self.order.id} - {self.menu_item.name} x{self.quantity}"
-
     @property
     def subtotal(self):
+        """Calcula el subtotal como cantidad * precio unitario"""
         return self.quantity * self.unit_price
+
+    def __str__(self):
+        return f"{self.order.id} - {self.menu_item.name} x{self.quantity}"

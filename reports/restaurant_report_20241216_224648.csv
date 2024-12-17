@@ -1,0 +1,4 @@
+ID;Nombre;Categoría;Calificación;Estado;Total Pedidos;Ingresos Totales
+1;Restaurante Test;ITALIAN;0.00;OPEN;0;0
+2;Nuevo Restaurante Actualizado;MEXICAN;0.00;CLOSED;0;0
+3;Restaurante Ejemplo;ITALIAN;0.00;OPEN;1;0.00

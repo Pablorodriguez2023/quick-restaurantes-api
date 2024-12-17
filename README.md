@@ -617,40 +617,29 @@ curl -X POST http://localhost:8000/api/token/ \
 - Retorna: confirmación de eliminación
 - URL ejemplo: `http://localhost:8000/api/orders/orders/1/`
 
-### 📦 Gestión de Items de Orden
-
-**GET /api/orders/order-items/**
-- Lista todos los items de órdenes
-- Requiere: token JWT
-- Retorna: lista de items con sus detalles
-- URL: `http://localhost:8000/api/orders/order-items/`
+### 📦 Gestión de Ítems de Orden
 
 **POST /api/orders/order-items/**
-- Agrega un nuevo item a una orden
-- Requiere: token JWT y datos del item
-- Retorna: datos del item creado
-- URL: `http://localhost:8000/api/orders/order-items/`
-- Body ejemplo:
+- Agrega un nuevo ítem a una orden.
+- **Body**:
   ```json
   {
-    "order": 1,
-    "menu_item": 1,
+    "menu_item_id": 1,
     "quantity": 2
   }
   ```
 
+**GET /api/orders/order-items/**
+- Lista todos los ítems de las órdenes.
+- **Requiere**: token JWT.
+
 **GET /api/orders/order-items/{id}/**
-- Obtiene detalles de un item específico
-- Requiere: token JWT
-- Retorna: información detallada del item
-- URL ejemplo: `http://localhost:8000/api/orders/order-items/1/`
+- Obtiene los detalles de un ítem específico de la orden.
+- **Requiere**: token JWT.
 
 **PUT /api/orders/order-items/{id}/**
-- Actualiza información de un item
-- Requiere: token JWT y datos a actualizar
-- Retorna: datos actualizados del item
-- URL ejemplo: `http://localhost:8000/api/orders/order-items/1/`
-- Body ejemplo:
+- Actualiza un ítem existente en la orden.
+- **Body**:
   ```json
   {
     "quantity": 3
@@ -658,10 +647,8 @@ curl -X POST http://localhost:8000/api/token/ \
   ```
 
 **DELETE /api/orders/order-items/{id}/**
-- Elimina un item de una orden
-- Requiere: token JWT
-- Retorna: confirmación de eliminación
-- URL ejemplo: `http://localhost:8000/api/orders/order-items/1/`
+- Elimina un ítem de la orden.
+- **Requiere**: token JWT.
 
 ### 🔒 Seguridad de la API
 
