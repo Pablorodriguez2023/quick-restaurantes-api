@@ -42,7 +42,7 @@ Sistema de gestión de restaurantes desarrollado con Django REST Framework que p
  
 ### 1. Clonar el Repositorio
 ```bash
-git clone https://github.com/Pablorodriguez2023/restaurant-api.git pablo-rodriguez-restaurantes-api && cd pablo-rodriguez-restaurantes-api
+git clone https://github.com/Pablorodriguez2023/quick-restaurantes-api.git pablo-rodriguez-restaurantes-api && cd pablo-rodriguez-restaurantes-api
 ```
  
 ### 2. Configurar Variables de Entorno
@@ -83,21 +83,16 @@ docker-compose up --build
 ```bash
 # Generar migraciones
 docker exec restaurantes-app python manage.py makemigrations
+```
 
+```
 # Aplicar migraciones
 docker exec restaurantes-app python manage.py migrate
 ```
 
-#### Paso 2: Verificar Configuración JWT
-```bash
-# Verificar que JWT_SECRET_KEY está configurado en .env
-echo "JWT_SECRET_KEY=your_jwt_secret_key_here" >> .env
 
-# Reiniciar el servicio para aplicar los cambios
-docker restart restaurantes-app
-```
 
-#### Paso 3: Crear Superusuario
+#### Paso 2: Crear Superusuario
 
 > **⚠️ Importante**: Hay dos formas de crear el superusuario:
 
@@ -118,7 +113,7 @@ if not User.objects.filter(username='admin').exists():
 "
 ```
 
-#### Paso 4: Verificar la Instalación
+#### Paso 3: Verificar la Instalación
 
 ```bash
 # 1. Verificar que el usuario existe
@@ -127,8 +122,10 @@ from django.contrib.auth import get_user_model;
 User = get_user_model();
 print('Usuarios en la base de datos:', User.objects.all())
 "
+```
 
 # 2. Probar la obtención del token
+```
 curl -X POST http://localhost:8000/api/token/ \
      -H "Content-Type: application/json" \
      -d '{"username": "admin", "password": "adminpass123"}'
@@ -145,7 +142,10 @@ curl -X POST http://localhost:8000/api/token/ \
 > 5. Si tienes problemas con la autenticación, verifica que JWT_SECRET_KEY está correctamente configurado en tu archivo .env.
 
 ---
- 
+##  🚀 PRUEBAS CON POSTMAN
+> si desea realizar el proceso de pruebas con postman, puede importar la coleccion que se encuentra en la raiz del proyecto, llamada `postman_collection.json.`
+
+
 ## 📡 API Endpoints
 
 ### 🔐 Autenticación y Tokens
